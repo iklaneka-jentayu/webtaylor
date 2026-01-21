@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StitchCraft Tailors | Custom Tailoring & Alterations</title>
+    <meta name="description" content="Professional custom tailoring, bespoke suits, dress alterations, and clothing repairs. Perfect fit guaranteed. Fast turnaround. Book your appointment today!">
+    <meta name="keywords" content="tailoring, custom suits, alterations, dress fitting, clothing repairs, bespoke clothing, tailor near me">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">StitchCraft<span>Tailors</span></a>
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="admin.html" class="btn-admin">Admin</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Perfect Fit, <span class="highlight">Guaranteed</span></h1>
+                <p class="tagline">Premium custom tailoring and alterations for men and women. Experience clothing that fits your body and personality.</p>
+                <div class="hero-buttons">
+                    <a href="#order" class="btn-primary">Book Appointment</a>
+                    <a href="#services" class="btn-secondary">Our Services</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Professional tailor measuring suit">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Our Tailoring Services</h2>
+            <p class="section-subtitle">From custom creations to perfect alterations, we handle all your clothing needs</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Custom Suits</h3>
+                    <p>Bespoke suits tailored to your exact measurements and style preferences. Choose from premium fabrics.</p>
+                    <ul>
+                        <li>Perfect fit guaranteed</li>
+                        <li>500+ fabric options</li>
+                        <li>4-week delivery</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Alterations</h3>
+                    <p>Professional alterations for dresses, pants, jackets, and all clothing types. Quick turnaround available.</p>
+                    <ul>
+                        <li>Hemming & tapering</li>
+                        <li>Take in/let out seams</li>
+                        <li>Button replacement</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-female"></i>
+                    </div>
+                    <h3>Bridal & Formal</h3>
+                    <p>Specialized wedding dress alterations and formal wear adjustments. Preserving delicate fabrics with care.</p>
+                    <ul>
+                        <li>Wedding dress fitting</li>
+                        <li>Beading & lace work</li>
+                        <li>Formal gown adjustments</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Repairs</h3>
+                    <p>Expert clothing repairs including zippers, seams, tears, and lining replacement. Quality restoration.</p>
+                    <ul>
+                        <li>Zipper replacement</li>
+                        <li>Tear & hole repair</li>
+                        <li>Lining restoration</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Form -->
+    <section class="order-form" id="order">
+        <div class="container">
+            <h2>Book Your Tailoring Service</h2>
+            <p class="section-subtitle">Fill out the form below and we'll contact you within 24 hours</p>
+            
+            <form id="orderForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Type *</label>
+                        <select id="service" name="service" required>
+                            <option value="">Select a service</option>
+                            <option value="custom-suit">Custom Suit</option>
+                            <option value="alterations">Alterations</option>
+                            <option value="bridal-formal">Bridal/Formal</option>
+                            <option value="repairs">Repairs</option>
+                            <option value="consultation">Consultation</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="description">Service Description *</label>
+                    <textarea id="description" name="description" rows="4" required placeholder="Please describe what you need (e.g., 'Suit alterations for wedding', 'Dress hemming', etc.)"></textarea>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="urgency">Urgency</label>
+                        <select id="urgency" name="urgency">
+                            <option value="standard">Standard (1-2 weeks)</option>
+                            <option value="rush">Rush (3-5 days)</option>
+                            <option value="express">Express (1-2 days) +25%</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="preferred-date">Preferred Appointment Date</label>
+                        <input type="date" id="preferred-date" name="preferred-date">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Any special requests or measurements we should know?"></textarea>
+                </div>
+                
+                <button type="submit" class="btn-primary btn-submit">
+                    <i class="fas fa-paper-plane"></i> Submit Order Request
+                </button>
+                <p class="form-note">We'll contact you within 24 hours to confirm details and provide a quote.</p>
+            </form>
+            
+            <div id="formMessage" class="message"></div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>Customer Reviews</h2>
+            <p class="section-subtitle">What our clients say about our tailoring services</p>
+            
+            <div class="testimonial-grid">
+                <div class testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"My wedding suit fit perfectly! The attention to detail was exceptional. Highly recommended for any formal wear needs."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Michael R.</h4>
+                        <span>Bespoke Suit Client</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"They altered 5 dresses for me with a 2-day turnaround. Professional, affordable, and perfect work every time."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>Sarah L.</h4>
+                        <span>Alterations Customer</span>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Fixed my favorite jacket that had a torn lining. Looks brand new! Fair pricing and excellent craftsmanship."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <h4>David K.</h4>
+                        <span>Repair Service Client</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>StitchCraft Tailors</h3>
+                    <p>Professional custom tailoring and alterations since 2010. Serving the community with quality craftsmanship and attention to detail.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Fashion Street, Style District</p>
+                        <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                        <p><i class="fas fa-envelope"></i> info@stitchcrafttailors.com</p>
+                    </div>
+                </div>
+                
+                <div class="footer-hours">
+                    <h4>Business Hours</h4>
+                    <p>Monday - Friday: 9am - 6pm</p>
+                    <p>Saturday: 10am - 4pm</p>
+                    <p>Sunday: Closed</p>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-google"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 StitchCraft Tailors. All rights reserved. | <a href="admin.html">Admin Panel</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
