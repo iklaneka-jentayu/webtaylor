@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 4, name: 'Sarah Johnson', phone: '(555) 456-7890', email: 'sarah@example.com', service: 'Bridal/Formal', date: '2024-01-22', status: 'pending', amount: 120, description: 'Wedding dress fitting', notes: 'Appointment scheduled' },
         { id: 5, name: 'Michael Brown', phone: '(555) 567-8901', email: 'michael@example.com', service: 'Custom Suit', date: '2024-01-25', status: 'ready', amount: 520, description: 'Custom tuxedo for wedding', notes: 'Pickup scheduled for Friday' }
     ];
-    
+
     // Initialize
     loadOrders();
     updateStats();
@@ -334,3 +334,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 });
+
