@@ -39,8 +39,7 @@ if (orderForm) {
         
         try {
             // Send to Google Sheets (replace with your Apps Script URL)
-            const scriptURL = 'https://script.google.com/macros/s/AKfycby.../exec';
-            
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbw5dcOe62WNEEdor-BdRIpOizy2ZcsWJJ7XaXWnYj1W05pBGOCzOYmZ4SQG-LVQ-GoiPg/exec';
             const response = await fetch(scriptURL, {
                 method: 'POST',
                 mode: 'no-cors',
@@ -237,5 +236,6 @@ const updateActiveNav = () => {
         }
     });
 };
+
 
 window.addEventListener('scroll', updateActiveNav);
