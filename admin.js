@@ -316,6 +316,92 @@ document.addEventListener('DOMContentLoaded', function() {
             return false;
         }
     }
+
+    // Save order changes
+    async function saveOrderChanges() {
+        try {
+            if (!editForm.checkValidity()) {
+                editForm.reportValidity();
+                return;
+            }
+            
+            const index = currentEditRow;
+            const updatedOrder = {
+                customerName: document.getElementById('editName').value,
+                email: document.getElementById('editEmail').value,
+                serviceType: document.getElementById('editService').value,
+                appointmentDate: document.getElementById('editDate').value,
+                status: document.getElementById('editStatus').value,
+                urgency: document.getElementById('editUrgency').value
+            };
+            
+            // In a real implementation, you would send this to Google Sheets
+            // For now, we'll update locally
+            ordersData[index] = { ...ordersData[index], ...updatedOrder };
+            
+            // Send update to Google Sheets
+            const response = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    action: 'update',
+                    row: index + 2, // +2 because row 1 is headers, and arrays are 0-indexed
+                    data: updatedOrder
+                })
+            });
+            
+            // Update local display
+            renderOrders(ordersData);
+            closeEditModal();
+            
+            // Show success message (you could add a toast notification here)
+            alert('Order updated successfully!');
+            
+        } catch (error) {
+            console.error('Error updating order:', error);
+            alert('Failed to update order. Please try again.');
+        }
+    }
+    
+    // Delete order
+    async function deleteOrder(index) {
+        if (!confirm('Are you sure you want to delete this order?')) {
+            return;
+        }
+        
+        try {
+            const orderId = ordersData[index].id || index;
+            
+            // Send delete request to Google Sheets
+            const response = await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    action: 'delete',
+                    row: index + 2
+                })
+            });
+            
+            // Remove from local data
+            ordersData.splice(index, 1);
+            
+            // Update display
+            renderOrders(ordersData);
+            
+            // Show success message
+            alert('Order deleted successfully!');
+            
+        } catch (error) {
+            console.error('Error deleting order:', error);
+            alert('Failed to delete order. Please try again.');
+        }
+    }
     
     // Make functions globally available for inline onclick handlers
     window.editOrder = function(id) {
@@ -334,4 +420,5 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 });
+
 
