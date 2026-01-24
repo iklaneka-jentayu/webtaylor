@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 ordersData = data.data;
                 renderOrders(ordersData);
             } else {
-                throw new Error('Failed to load orders');
+                throw new Error('Failed to load orders - test');
             }
         } catch (error) {
             console.error('Error loading orders:', error);
@@ -310,6 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
