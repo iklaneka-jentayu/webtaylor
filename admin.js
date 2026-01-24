@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         //noOrders.classList.add('hidden');
         //ordersTable.classList.remove('hidden');
-        alert('orders-'+ JSON.stringfy(orders));
+        alert('orders-'+ JSON.stringify(orders));
         orders.forEach((order, index) => {
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -320,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
