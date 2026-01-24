@@ -88,19 +88,19 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderOrders(orders) {
 
         alert('renders');
-        ordersBody.innerHTML = '';
+        //ordersBody.innerHTML = '';
 
         alert('orders-'+ orders);
         
         if (orders.length === 0) {
-            ordersTable.classList.add('hidden');
-            noOrders.classList.remove('hidden');
+            //ordersTable.classList.add('hidden');
+            //noOrders.classList.remove('hidden');
             return;
         }
         
-        noOrders.classList.add('hidden');
-        ordersTable.classList.remove('hidden');
-        
+        //noOrders.classList.add('hidden');
+        //ordersTable.classList.remove('hidden');
+        alert('orders-'+ JSON.stringfy(orders));
         orders.forEach((order, index) => {
             const row = document.createElement('tr');
             row.innerHTML = `
@@ -320,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
