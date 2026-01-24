@@ -326,7 +326,41 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     
     window.deleteOrder = function(id) {
+
+        const sheetUrl = localStorage.getItem('googleSheetUrl') || sheetUrlInput.value;
+        const order = orders.find(o => o.id === id);
+        
         if (confirm('Are you sure you want to delete this order?')) {
+
+            if (!sheetUrl || !sheetUrl.includes('https://script.google.com/')) {
+                console.warn('No valid Google Sheets URL configured');
+                return false;
+            }
+            
+            try {
+                const response = await fetch(sheetUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        action: 'deleteOrder',
+                        data: {
+                            ...order,
+                            timestamp: new Date().toISOString(),
+                            source: 'admin_panel'
+                        }
+                    })
+                });
+                
+                return true;
+            } catch (error) {
+                console.error('Error saving to Google Sheets:', error);
+                showNotification('Error saving to Google Sheets', 'error');
+                return false;
+            }
+     
             orders = orders.filter(o => o.id !== id);
             loadOrders();
             updateStats();
@@ -334,3 +368,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     };
 });
+
