@@ -2,9 +2,9 @@
 // Deploy as a Web App with "Execute as: Me" and "Who has access: Anyone"
 
 // Configuration
-const SPREADSHEET_ID = '1iMtiDmWlK-CjYa91rHvC3zM6-fudHtVSXKDNozrE_28';
+const SPREADSHEET_ID = '1P4bndxYVdgKSQE09W4NwZdhR0A9sLAVuGermgUCFabo';
 const SHEET_NAME = 'Orders';
-const SHEET_GID = '1660760755';
+//const SHEET_GID = '1660760755';
 
 // Main doPost function to handle form submissions
 function doPost(e) {
@@ -266,6 +266,7 @@ function initializeSheet() {
   if (sheet.getLastRow() === 0) {
     const headers = [
       'Timestamp',
+      'Id',
       'Customer Name',
       'Email',
       'Phone',
@@ -294,22 +295,23 @@ function initializeSheet() {
     
     // Set column widths
     sheet.setColumnWidth(1, 180); // Timestamp
-    sheet.setColumnWidth(2, 150); // Customer Name
-    sheet.setColumnWidth(3, 200); // Email
-    sheet.setColumnWidth(4, 130); // Phone
-    sheet.setColumnWidth(5, 150); // Service Type
-    sheet.setColumnWidth(6, 120); // Appointment Date
-    sheet.setColumnWidth(7, 300); // Garment Details
-    sheet.setColumnWidth(8, 150); // Urgency
-    sheet.setColumnWidth(9, 100); // Budget
-    sheet.setColumnWidth(10, 100); // Amount
-    sheet.setColumnWidth(11, 120); // Reference
-    sheet.setColumnWidth(12, 100); // Newsletter
-     sheet.setColumnWidth(13, 100); // Description
-    sheet.setColumnWidth(14, 120); // Status
-    sheet.setColumnWidth(15, 120); // Source
-    sheet.setColumnWidth(16, 120); // Notes
-    sheet.setColumnWidth(17, 180); // Last Updated
+    sheet.setColumnWidth(2, 180); // Id
+    sheet.setColumnWidth(3, 150); // Customer Name
+    sheet.setColumnWidth(4, 200); // Email
+    sheet.setColumnWidth(5, 130); // Phone
+    sheet.setColumnWidth(6, 150); // Service Type
+    sheet.setColumnWidth(7, 120); // Appointment Date
+    sheet.setColumnWidth(8, 300); // Garment Details
+    sheet.setColumnWidth(9, 150); // Urgency
+    sheet.setColumnWidth(10, 100); // Budget
+    sheet.setColumnWidth(11, 100); // Amount
+    sheet.setColumnWidth(12, 120); // Reference
+    sheet.setColumnWidth(13, 100); // Newsletter
+     sheet.setColumnWidth(14, 100); // Description
+    sheet.setColumnWidth(15, 120); // Status
+    sheet.setColumnWidth(16, 120); // Source
+    sheet.setColumnWidth(17, 120); // Notes
+    sheet.setColumnWidth(18, 180); // Last Updated
   }
   
   return sheet;
