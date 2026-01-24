@@ -62,6 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('loadOrders - 3');
             // Fetch data from Google Apps Script
             const response = await fetch(`${SCRIPT_URL}?action=read`);
+            alert('Fetch data from Google Apps Script');
             const data = await response.json();
 
             alert('data - '+data);
@@ -84,15 +85,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // Render orders to table
     function renderOrders(orders) {
         ordersBody.innerHTML = '';
+
+         alert('orders - '+orders)
         
-        if (orders.length === 0) {
-            ordersTable.classList.add('hidden');
-            noOrders.classList.remove('hidden');
-            return;
-        }
+       // if (orders.length === 0) {
+        //    ordersTable.classList.add('hidden');
+        //    noOrders.classList.remove('hidden');
+        //    return;
+        //}
         
-        noOrders.classList.add('hidden');
-        ordersTable.classList.remove('hidden');
+       // noOrders.classList.add('hidden');
+        //ordersTable.classList.remove('hidden');
         
         orders.forEach((order, index) => {
             const row = document.createElement('tr');
@@ -313,6 +316,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
