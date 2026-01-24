@@ -1,8 +1,8 @@
 // Table CRUD operations with Google Sheets
 document.addEventListener('DOMContentLoaded', function() {
     // Configuration - Replace with your actual values
-    //const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw5dcOe62WNEEdor-BdRIpOizy2ZcsWJJ7XaXWnYj1W05pBGOCzOYmZ4SQG-LVQ-GoiPg/exec';
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzzBvodJHZVzFoDX1hawHLM3XNFS4iJWBRIFclt2MAcQ3k7tZnWF1Udh1bKZNdwFWM98g/exec';    
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw5dcOe62WNEEdor-BdRIpOizy2ZcsWJJ7XaXWnYj1W05pBGOCzOYmZ4SQG-LVQ-GoiPg/exec';
+    //const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzzBvodJHZVzFoDX1hawHLM3XNFS4iJWBRIFclt2MAcQ3k7tZnWF1Udh1bKZNdwFWM98g/exec';    
     
     // DOM Elements
     const ordersTable = document.getElementById('ordersTable');
@@ -316,6 +316,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
