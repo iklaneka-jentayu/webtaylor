@@ -2,7 +2,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Configuration - Replace with your actual values
     const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw5dcOe62WNEEdor-BdRIpOizy2ZcsWJJ7XaXWnYj1W05pBGOCzOYmZ4SQG-LVQ-GoiPg/exec';
-    //https://script.google.com/macros/s/AKfycbw5dcOe62WNEEdor-BdRIpOizy2ZcsWJJ7XaXWnYj1W05pBGOCzOYmZ4SQG-LVQ-GoiPg/exec
     
     // DOM Elements
     const ordersTable = document.getElementById('ordersTable');
@@ -299,9 +298,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function showLoading() {
-        loading.classList.remove('hidden');
-        ordersTable.classList.add('hidden');
-        noOrders.classList.add('hidden');
+        //loading.classList.remove('hidden');
+        //ordersTable.classList.add('hidden');
+        //noOrders.classList.add('hidden');
     }
     
     function hideLoading() {
@@ -314,6 +313,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
