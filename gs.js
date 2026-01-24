@@ -88,6 +88,7 @@ function createOrder(data) {
     const timestamp = new Date().toLocaleString();
     const rowData = [
       timestamp,
+      data.id || '',
       data.customerName || '',
       data.email || '',
       data.phone || '',
@@ -96,9 +97,14 @@ function createOrder(data) {
       data.garmentDetails || '',
       data.urgency || '',
       data.budget || '',
+      data.amount || 0,
       data.reference || '',
+      data.description || '',
       data.newsletter || '',
       data.status || 'Pending',
+      data.source ||  'unknown',
+      data.notes ||  'unknown',
+      data.lastupdated || '',
       data.timestamp || timestamp
     ];
     
@@ -268,9 +274,13 @@ function initializeSheet() {
       'Garment Details',
       'Urgency',
       'Budget',
+      'amount',
       'Reference',
       'Newsletter',
+      'description',
       'Status',
+      'Source',
+      'Notes',
       'Last Updated'
     ];
     
@@ -292,10 +302,14 @@ function initializeSheet() {
     sheet.setColumnWidth(7, 300); // Garment Details
     sheet.setColumnWidth(8, 150); // Urgency
     sheet.setColumnWidth(9, 100); // Budget
-    sheet.setColumnWidth(10, 120); // Reference
-    sheet.setColumnWidth(11, 100); // Newsletter
-    sheet.setColumnWidth(12, 120); // Status
-    sheet.setColumnWidth(13, 180); // Last Updated
+    sheet.setColumnWidth(10, 100); // Amount
+    sheet.setColumnWidth(11, 120); // Reference
+    sheet.setColumnWidth(12, 100); // Newsletter
+     sheet.setColumnWidth(13, 100); // Description
+    sheet.setColumnWidth(14, 120); // Status
+    sheet.setColumnWidth(15, 120); // Source
+    sheet.setColumnWidth(16, 120); // Notes
+    sheet.setColumnWidth(17, 180); // Last Updated
   }
   
   return sheet;
