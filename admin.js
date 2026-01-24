@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function renderOrders(orders) {
         ordersBody.innerHTML = '';
 
-         alert('orders - '+orders)
+        alert('orders-'+ JSON.stringify(orders));
         
        // if (orders.length === 0) {
         //    ordersTable.classList.add('hidden');
@@ -318,6 +318,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
