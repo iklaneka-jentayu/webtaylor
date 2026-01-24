@@ -65,8 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Fetch data from Google Apps Script');
             const data = await response.json();
 
-            alert('data - '+data);
-          
+            alert('data - '+Json.stringfy(data));
             
             if (data.success && data.data) {
                 ordersData = data.data;
@@ -316,6 +315,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
