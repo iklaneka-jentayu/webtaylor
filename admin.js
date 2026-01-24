@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     let ordersData = [];
     let currentEditRow = null;
-    
+    alert('init..')
     // Initialize
     loadOrders();
     
@@ -314,6 +314,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
