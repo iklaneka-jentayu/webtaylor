@@ -86,18 +86,20 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Render orders to table
     function renderOrders(orders) {
+
+        alert('renders');
         ordersBody.innerHTML = '';
 
-        alert('orders-'+ JSON.stringify(orders));
+        alert('orders-'+ orders);
         
-       // if (orders.length === 0) {
-        //    ordersTable.classList.add('hidden');
-        //    noOrders.classList.remove('hidden');
-        //    return;
-        //}
+        if (orders.length === 0) {
+            ordersTable.classList.add('hidden');
+            noOrders.classList.remove('hidden');
+            return;
+        }
         
-       // noOrders.classList.add('hidden');
-        //ordersTable.classList.remove('hidden');
+        noOrders.classList.add('hidden');
+        ordersTable.classList.remove('hidden');
         
         orders.forEach((order, index) => {
             const row = document.createElement('tr');
@@ -318,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
