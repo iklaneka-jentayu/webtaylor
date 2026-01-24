@@ -66,10 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
             alert('Fetch data from Google Apps Script');
             const data = await response.json();
 
-            //alert('data - '+Json.stringfy(data));
+            alert('data - '+JSON.stringfy(data));
             
             if (data.success && data.data) {
                 ordersData = data.data;
+                alert('data.success');
                 renderOrders(ordersData);
             } else {
                 throw new Error('Failed to load orders - test');
@@ -316,6 +317,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
