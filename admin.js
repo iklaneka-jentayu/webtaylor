@@ -83,46 +83,59 @@ document.addEventListener('DOMContentLoaded', function() {
             hideLoading();
         }
     }
+
+
+
     
     // Render orders to table
     function renderOrders(orders) {
 
         alert('renders');
         //ordersBody.innerHTML = '';
+        ordersTableBody.innerHTML = '';
 
         alert('orders-'+ orders);
         
-        if (orders.length === 0) {
+        //if (orders.length === 0) {
             //ordersTable.classList.add('hidden');
             //noOrders.classList.remove('hidden');
-            return;
-        }
+            //return;
+        //}
+
+        ordersTableBody.innerHTML = '';
         
-        //noOrders.classList.add('hidden');
-        //ordersTable.classList.remove('hidden');
-        alert('orders-'+ JSON.stringify(orders));
-        orders.forEach((order, index) => {
+        const filteredOrders = filter 
+            ? orders.filter(order => 
+                order.name.toLowerCase().includes(filter.toLowerCase()) ||
+                order.service.toLowerCase().includes(filter.toLowerCase()) ||
+                order.status.toLowerCase().includes(filter.toLowerCase())
+              )
+            : orders;
+        
+        filteredOrders.forEach(order => {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${order.customerName || ''}</td>
-                <td>${order.email || ''}</td>
-                <td>${order.serviceType || ''}</td>
-                <td>${formatDate(order.appointmentDate) || ''}</td>
-                <td><span class="status-badge status-${getStatusClass(order.status)}">${order.status || 'Pending'}</span></td>
-                <td>${order.urgency || ''}</td>
+                <td>#${order.id.toString().padStart(3, '0')}</td>
+                <td>
+                    <strong>${order.name}</strong><br>
+                    <small>${order.phone}</small>
+                </td>
+                <td>${formatService(order.service)}</td>
+                <td>${order.date}</td>
+                <td><span class="status-badge status-${order.status}">${formatStatus(order.status)}</span></td>
+                <td>$${order.amount.toFixed(2)}</td>
                 <td>
                     <div class="action-buttons">
-                        <button class="action-btn edit-btn" data-index="${index}">
-                            <i class="fas fa-edit"></i> Edit
+                        <button class="btn-action btn-edit" onclick="editOrder(${order.id})">
+                            <i class="fas fa-edit"></i>
                         </button>
-                        <button class="action-btn delete-btn" data-index="${index}">
-                            <i class="fas fa-trash"></i> Delete
+                        <button class="btn-action btn-delete" onclick="deleteOrder(${order.id})">
+                            <i class="fas fa-trash"></i>
                         </button>
                     </div>
                 </td>
             `;
-            
-            ordersBody.appendChild(row);
+            ordersTableBody.appendChild(row);
         });
         
         // Add event listeners to action buttons
@@ -320,6 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
 
