@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function loadOrders() {
         try {
             showLoading();
-            
+             alert('loadOrders');
             // Fetch data from Google Apps Script
             const response = await fetch(`${SCRIPT_URL}?action=read`);
             const data = await response.json();
@@ -310,5 +310,6 @@ document.addEventListener('DOMContentLoaded', function() {
         alert(message);
     }
 });
+
 
 
